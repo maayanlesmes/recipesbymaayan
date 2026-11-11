@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main"
@@ -7,72 +8,167 @@
     android:layout_height="match_parent"
     android:background="#FFFDE7"
     tools:context=".RegisterActivity">
-    <TextView
-        android:id="@+id/tvRegisterTitle"
+
+    <ScrollView
         android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="64dp"
-        android:text="יצירת חשבון"
-        android:textSize="28sp"
-        android:textStyle="bold"
-        android:textColor="#5D3040"
-        android:gravity="center"
+        android:layout_height="0dp"
+        android:fillViewport="true"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-    <EditText
-        android:id="@+id/etRegisterUsername"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="160dp"
-        android:minHeight="48dp"
-        android:hint="שם משתמש"
-        android:inputType="text"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-    <EditText
-        android:id="@+id/etRegisterPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="16dp"
-        android:minHeight="48dp"
-        android:hint="סיסמה — לפחות 6 תווים"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/etRegisterUsername"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-    <EditText
-        android:id="@+id/etConfirmPassword"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="16dp"
-        android:minHeight="48dp"
-        android:hint="אימות סיסמה"
-        android:inputType="textPassword"
-        app:layout_constraintTop_toBottomOf="@id/etRegisterPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
-    <Button
-        android:id="@+id/btnRegister"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="32dp"
-        android:layout_marginTop="24dp"
-        android:text="הרשמה"
-        android:backgroundTint="#F8BBD0"
-        android:textColor="#5D3040"
-        android:textSize="18sp"
-        app:layout_constraintTop_toBottomOf="@id/etConfirmPassword"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layoutDirection="rtl"
+            android:paddingStart="24dp"
+            android:paddingEnd="24dp"
+            android:paddingTop="40dp"
+            android:paddingBottom="32dp">
+
+            <TextView
+                android:id="@+id/tvRegisterTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="יצירת חשבון"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:fontFamily="serif"
+                android:textColor="#5D3040"
+                android:gravity="center" />
+
+            <com.google.android.material.card.MaterialCardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="32dp"
+                app:cardBackgroundColor="#FFFFFF"
+                app:cardCornerRadius="28dp"
+                app:cardElevation="2dp"
+                app:strokeColor="#F8BBD0"
+                app:strokeWidth="1dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="24dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="נעים להכיר!"
+                        android:textSize="24sp"
+                        android:textStyle="bold"
+                        android:textColor="#5D3040" />
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="28dp"
+                        android:hint="שם משתמש"
+                        android:textColorHint="#785563"
+                        app:hintTextColor="#AD456B"
+                        app:boxBackgroundColor="#FFFBFC"
+                        app:boxStrokeColor="#AD456B"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etRegisterUsername"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="56dp"
+                            android:inputType="text"
+                            android:maxLines="1"
+                            android:textSize="17sp"
+                            android:textColor="#5D3040" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="סיסמה"
+                        android:textColorHint="#785563"
+                        app:helperText="לפחות 6 תווים"
+                        app:helperTextTextColor="#785563"
+                        app:hintTextColor="#AD456B"
+                        app:boxBackgroundColor="#FFFBFC"
+                        app:boxStrokeColor="#AD456B"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="#AD456B">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etRegisterPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="56dp"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:textSize="17sp"
+                            android:textColor="#5D3040" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.textfield.TextInputLayout
+                        style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="16dp"
+                        android:hint="אימות סיסמה"
+                        android:textColorHint="#785563"
+                        app:hintTextColor="#AD456B"
+                        app:boxBackgroundColor="#FFFBFC"
+                        app:boxStrokeColor="#AD456B"
+                        app:boxCornerRadiusTopStart="16dp"
+                        app:boxCornerRadiusTopEnd="16dp"
+                        app:boxCornerRadiusBottomStart="16dp"
+                        app:boxCornerRadiusBottomEnd="16dp"
+                        app:endIconMode="password_toggle"
+                        app:endIconTint="#AD456B">
+
+                        <com.google.android.material.textfield.TextInputEditText
+                            android:id="@+id/etConfirmPassword"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:minHeight="56dp"
+                            android:inputType="textPassword"
+                            android:maxLines="1"
+                            android:textSize="17sp"
+                            android:textColor="#5D3040" />
+
+                    </com.google.android.material.textfield.TextInputLayout>
+
+                    <com.google.android.material.button.MaterialButton
+                        android:id="@+id/btnRegister"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="24dp"
+                        android:minHeight="56dp"
+                        android:text="יצירת החשבון שלי"
+                        android:textSize="18sp"
+                        android:textStyle="bold"
+                        android:textColor="#5D3040"
+                        app:backgroundTint="#F8BBD0"
+                        app:cornerRadius="18dp" />
+
+                </LinearLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+
+        </LinearLayout>
+
+    </ScrollView>
+
 </androidx.constraintlayout.widget.ConstraintLayout>
